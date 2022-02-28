@@ -4,11 +4,11 @@ const querys = {
         let sql = "SELECT * FROM product";
         return sql;
     },
-    selectByCategory : (id) => {
-        const sql = `SELECT * FROM product INNER JOIN category ON product.category = category.id AND product.category= ${id}`
+    selectByCategory : () => {
+        const sql = `SELECT  product.name, product.price, product.url_image, category.name AS category FROM product INNER JOIN category ON product.category = category.id`
         return sql;
     },
-    selectByWord : (word) => {
+    getProductsByWord : (word) => {
         const sql = `SELECT * FROM product WHERE product.name LIKE '%${word}%'`
         return sql;
     },
