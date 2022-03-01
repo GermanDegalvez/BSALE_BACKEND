@@ -2,11 +2,11 @@
 // se importara todas las funciones del controlado
 const express = require('express');
 var router = express.Router();
-var functions = require('./../../src/controllers/products.controller');
+var controllers = require('./../../src/controllers/products.controller');
 
 // TODOS LOS GET
-router.get('/getProductsById', functions.getProductsById );
-router.post('/getProductsByWord' ,functions.getProductsByWord);
+router.get('/getProductsById', controllers.getProducts );
+router.post('/getProductsByWord' ,controllers.getProductsByWord);
 
 
 

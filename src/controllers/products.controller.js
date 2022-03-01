@@ -22,8 +22,8 @@ let products = [];
 
 
 
-const getProductsById = (req,res) =>{  
-    const sql = querys.selectByCategory()
+const getProducts = (req,res) =>{  
+    const sql = querys.selectProducts()
     connection.query(sql, (error, results) => {
       if (error) throw error;
       if (results.length > 0) {
@@ -36,7 +36,7 @@ const getProductsById = (req,res) =>{
 
   const getProductsByWord = (req,res) =>{  
     let {word} = req.body;
-    const sql = querys.getProductsByWord( word )
+    const sql = querys.selectProductsByWord( word )
     connection.query(sql, async (error, results) => {
       if (error) throw error;
       if (results.length > 0) {
@@ -49,7 +49,7 @@ const getProductsById = (req,res) =>{
 
 
   module.exports = {
-      getProductsById,
+      getProducts,
       getProductsByWord
   }
 

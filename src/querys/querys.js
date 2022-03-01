@@ -8,10 +8,14 @@ const querys = {
         const sql = `SELECT  product.name, product.price, product.url_image, category.name AS category FROM product INNER JOIN category ON product.category = category.id`
         return sql;
     },
-    getProductsByWord : (word) => {
-        const sql = `SELECT * FROM product WHERE product.name LIKE '%${word}%'`
+    selectProductsByWord : (word) => {
+        const sql =`SELECT  product.name, product.price, product.url_image, category.name AS category FROM product INNER JOIN category ON product.category = category.id  WHERE product.name LIKE '%${word}%' OR category.name LIKE '%${word}%'`
         return sql;
     },
+    // getProductsByWord : (word) => {
+    //     const sql = `SELECT * FROM product WHERE product.name LIKE '%${word}%'`
+    //     return sql;
+    // },
     sortByPriceAsc : () => {
         const sql = `SELECT * FROM product ORDER BY product.price ASC`
         return sql;
