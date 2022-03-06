@@ -10,7 +10,7 @@ var connection = mysql.createConnection({
   });
 
 
-   //Check connect
+  //  Check connect
   connection.connect( error => {
     if ( error ) throw error;
     console.log('Database server running');

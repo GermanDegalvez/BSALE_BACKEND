@@ -1,32 +1,19 @@
-//Aqui va a habert un listado de funciones , donmde las funciones van a devolver una query diferente
+//Definicion de las funciones que contienen las querys a utilizar
 const querys = {
     selectProducts : () => {
         let sql = "SELECT * FROM product";
         return sql;
     },
-    selectByCategory : () => {
-        const sql = `SELECT  product.name, product.price, product.url_image, category.name AS category FROM product INNER JOIN category ON product.category = category.id`
+    selectCategories : () => {
+        const sql = "SELECT * FROM category";
         return sql;
     },
     selectProductsByWord : (word) => {
         const sql =`SELECT  product.name, product.price, product.url_image, category.name AS category FROM product INNER JOIN category ON product.category = category.id  WHERE product.name LIKE '%${word}%' OR category.name LIKE '%${word}%'`
         return sql;
-    },
-    // getProductsByWord : (word) => {
-    //     const sql = `SELECT * FROM product WHERE product.name LIKE '%${word}%'`
-    //     return sql;
-    // },
-    sortByPriceAsc : () => {
-        const sql = `SELECT * FROM product ORDER BY product.price ASC`
-        return sql;
-    },
-    sortByPriceDesc : () => {
-        const sql = `SELECT * FROM product ORDER BY product.price DESC`
-        return sql;
     }
 }
 
 
-// exportar todas las funciones de este
 
 module.exports = querys

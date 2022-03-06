@@ -1,4 +1,4 @@
-// Improtas
+//Definición y levantamiento del servidor
 const express = require('express');
 const router = require('./src/routes/products.routes')
 const cors = require('cors');
