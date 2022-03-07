@@ -13,6 +13,6 @@ app.use(router)
 
 
 // levantamiento del servidor
-const PORT = 3050;
-app.listen( PORT, () => console.log(`Server running on port ${PORT}`))
+// const PORT = 3050;
+app.listen( process.env.PORT || 5000 )
 
