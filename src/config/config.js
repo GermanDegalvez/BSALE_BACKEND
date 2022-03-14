@@ -2,7 +2,7 @@
 
 const mysql = require('mysql');
 
-var connection = mysql.createConnection({
+var connection = mysql.createPool({
     host     : 'mdb-test.c6vunyturrl6.us-west-1.rds.amazonaws.com',
     user     : 'bsale_test',
     password : 'bsale_test',
@@ -10,10 +10,4 @@ var connection = mysql.createConnection({
   });
 
 
-  //  Check connect
-  connection.connect( error => {
-    if ( error ) throw error;
-    console.log('Database server running');
-  })
-
-  module.exports = connection;
+    module.exports = connection;
