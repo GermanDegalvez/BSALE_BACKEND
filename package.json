@@ -4,6 +4,8 @@
   "description": "Backend demo bsale",
   "main": "index.js",
   "scripts": {
+    "start:dev": "nodemon index.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,7 +24,5 @@
     "express": "^4.17.2",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.15"
-  },
-  "scripts":{
   }
 }
