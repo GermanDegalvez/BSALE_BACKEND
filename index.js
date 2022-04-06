@@ -14,5 +14,6 @@ app.use(router)
 
 // levantamiento del servidor
 // const PORT = 3050;
-app.listen( process.env.PORT || 5000 )
+app.listen( process.env.PORT || 5000 );
+console.log("Running on port 5000");
 
